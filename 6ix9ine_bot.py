@@ -43,12 +43,12 @@ def search_for_user_on_twitter(celeb_name):
 def prepare_media_for_upload(celeb_image_url):
     # download image of celeb (from URL)
     response = requests.get(celeb_image_url, stream=True)
-    with open("/Users/patrick/Git/6ix9ine_bot/images/celeb.jpg", "wb") as celeb_img:
+    with open("images/celeb.jpg", "wb") as celeb_img:
         celeb_img.write(response.content)
 
     # create media ids
-    filenames = ["/Users/patrick/Git/6ix9ine_bot/images/6ix9ine.jpg",
-                 "/Users/patrick/Git/6ix9ine_bot/images/celeb.jpg"]
+    filenames = ["images/6ix9ine.jpg",
+                 "images/celeb.jpg"]
     media_ids = []
     for filename in filenames:
         try:
