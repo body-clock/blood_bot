@@ -79,4 +79,5 @@ def format_for_tweet(celeb_name, screen_name):
 celeb_data_today = get_celeb_name_and_image_from_famous_birthdays("https://www.famousbirthdays.com/")
 username = search_for_user_on_twitter(celeb_data_today["-NAME-"])
 final_tweet_string = format_for_tweet(celeb_data_today["-NAME-"], username)
+print(final_tweet_string)
 twitter_api().update_status(status=final_tweet_string, media_ids=prepare_media_for_upload(celeb_data_today['-URL-']))
